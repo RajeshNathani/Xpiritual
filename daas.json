@@ -1,0 +1,44 @@
+[
+    {
+        "id": 0,
+        "state" : "setQuestion1",
+        "question": "I found it difficult to work up the initiative to do things.",
+        "class" : "Depression"
+    },
+    {
+        "id": 1,
+        "state" : "setQuestion2",
+        "question" : "I felt that I had nothing to look forward to.",
+        "class" : "Depression"
+    },
+    {
+        "id": 2,
+        "state" : "setQuestion3",
+        "question" : "I couldn't seem to experience any positive feeling at all",
+        "class" : "Depression"
+    },
+    {
+        "id": 3,
+        "state" : "setQuestion4",
+        "question" : "I felt down-hearted and blue",
+        "class" : "Depression"
+    },
+    {
+        "id": 4,
+        "state" : "setQuestion5",
+        "question" : "I was unable to become enthusiastic about anything.",
+        "class" : "Depression"
+    },
+    {
+        "id": 5,
+        "state" : "setQuestion6",
+        "question" : "I felt I wasn't worth much as a person.",
+        "class" : "Depression"
+    },
+    {
+        "id": 6,
+        "state" : "setQuestion7",
+        "question" : "I felt that life was meaningless",
+        "class" : "Depression"
+    }
+]
