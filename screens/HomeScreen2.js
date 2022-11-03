@@ -64,7 +64,7 @@ const HomeScreen2 = () => {
         </View>
         <View style={{width:'90%'}} className="m-auto py-2 rounded-md">
             <TouchableOpacity className="bg-green-300 w-full m-auto h-16 align-middle rounded-xl flex-row" onPress={()=>{navigation.navigate('Thought')}}>
-                <Text className="px-4 py-4 font-bold text-xl w-1/2 text-white items-start">Today's Thought</Text>
+                <Text className="px-4 py-4 font-bold text-xl  text-white items-start">Today's Thought</Text>
                 <Image source={require('../assets/chat.png')} className="w-2/5 h-4/5 m-auto mx-16 items-end" />
             </TouchableOpacity>
         </View>
@@ -107,25 +107,31 @@ const HomeScreen2 = () => {
                 </View>
             </View>
             <Text>{'\n'}</Text>
-            <Button title="Go to Details" onPress={() => navigation.navigate('Daas')} />
-            <Button title="Go to Daily" onPress={() => navigation.navigate('Daily')} />
+            <TouchableOpacity onPress={() => navigation.navigate('Daas')} style={{width:'94%'}} className="bg-sky-300 px-2 h-14 justify-center mx-auto rounded-lg">
+                <Text className="px-4 font-bold text-xl text-white py-2">Depression, Anxiety and Stress Scale</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Daas')} style={{width:'94%'}} className="bg-orange-300 my-3 px-2 h-14 justify-center mx-auto rounded-lg">
+                <Text className="px-4 font-bold text-xl text-white py-2">Progress Tracker</Text>
+            </TouchableOpacity>        
         </View>
         <BottomSheet
             ref={bottomSheetRef}
             index={1}
             snapPoints={snapPoints}
             onChange={handleSheetChanges}
-            className="bg-black rounded-lg "
+            className="flex-1"
+            enablePanDownToClose={true}
+            animateOnMount={true}
         >  
-            <View className="flex-1 px-4 bg-slate-500 rounded-lg">
-                <Text className="text-xl font-bold text-black">Hello Rajesh, Welcome!. {'\n\n'}First we would like to take a quick survey to know you better{'\n'}
+            <View className="flex-1 px-4 -scroll-my-20 bg-slate-300 rounded-xl align-middle text-center">
+                <Text className="text-xl justify-center h-56 my-6 font-bold text-black">Hello Rajesh, Welcome! {'\n\n'}First we would like to take a quick survey to know you better{'\n'}
                     {'\n'}
                     So that we can personalize the content according to your needs
                 </Text>
-                <TouchableOpacity className="bg-yellow-500 w-full my-6 h-16 rounded-xl flex-row" onPress={()=>{navigation.navigate('daas')}}>
-                    <Text className="px-4 py-4 font-bold text-xl w-1/2 text-white items-start">Let's Begin</Text>
+                <TouchableOpacity className="bg-yellow-500 justify-center align-middle w-full my-4 h-16 rounded-xl flex-row" onPress={()=>{navigation.navigate('Daas')}}>
+                    <Text className="px-4 py-4 font-bold text-xl w-1/2 text-center text-white items-start">Let's Begin</Text>
                 </TouchableOpacity>
-                <TouchableOpacity className="" onPress={()=>{handleClosePress()}}>
+                <TouchableOpacity className="justify-center" onPress={()=>{handleClosePress()}}>
                     <Text className="font-bold text-sm  text-gray text-center">Skip</Text>
                 </TouchableOpacity>
             </View>
