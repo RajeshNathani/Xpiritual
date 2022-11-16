@@ -9,7 +9,25 @@ import Relax from './screens/Relax';
 import Thought from './screens/Thought';
 import Daily from './screens/Daily';
 import Reason from './screens/Reason';
-import 'react-native-gesture-handler'
+import SignInScreen from './screens/SignInScreen';
+import SignUpScreen from './screens/SignUpScreen';
+import ConfirmEmailScreen from './screens/ConfirmEmailScreen';
+import 'react-native-gesture-handler';
+import ForgetPassword from './screens/ForgetPassword';
+import ResetPassword from './screens/ResetPassword';
+import SQLite from 'react-native-sqlite-storage';
+
+global.db = SQLite.openDatabase(
+  {
+    name: 'sqlite',
+    location: 'default',
+    createFromLocation: '~sqlite.db',
+  },
+  () => {},
+  error => {
+    console.log(error);
+  },
+);
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +38,12 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {/* <Stack.Screen name="MusicPlayer" component={MusicPlayer} /> */}
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="Confirm email" component={ConfirmEmailScreen} />
+        <Stack.Screen name="ResetPassword" component={ResetPassword} />
+        <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
         <Stack.Screen name="Home" component={HomeScreen2} />
         <Stack.Screen name="Relax" component={Relax} />
         <Stack.Screen name="Daas" component={Daas} />
