@@ -38,7 +38,7 @@ const HomeScreen2 = () => {
                     <FontAwesomeIcon icon={ faCircleUser } size={20} className="w-1/2" color="green" />
             </View>
         </View>
-            <Text className="px-4 py-1 text-3xl text-black font-bold tracking-wide">Good Morning, Rajesh</Text>
+            <Text className="px-4 py-1 text-3xl text-black font-bold tracking-wide">Good Morning</Text>
             <Text className="px-4 py-2 text-sm text-gray-400 font-bold tracking-wide">We Wish you a good day</Text>
         <View className="px-4">
             <TextInput className="border-2 m-auto w-full px-3 py-2 border-gray-200 appearance-none bg-white rounded-full text-md text-gray-500 placeholder-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="Search Activity" placeholderTextColor="#808080" />
@@ -57,7 +57,7 @@ const HomeScreen2 = () => {
             <View className="flex shadow-inner bg-sky-200 rounded-xl justify-center align-middle w-2/4 h-full" style={{ blur:20 }}>
                 <Image source={require('../assets/sleep3d.png')} className="w-4/5 h-3/5 mx-auto" />
                 <Text className="text-white px-4 text-lg font-bold mx-auto">Sleep</Text>
-                <TouchableOpacity className="bg-sky-100 w-1/2 h-6 justify-center px-4 mx-auto">
+                <TouchableOpacity className="bg-sky-100 w-1/2 h-6 justify-center px-4 mx-auto" onPress={()=>{navigation.navigate('Meditation')}}>
                     <Text className="text-center text-black text-md font-bold rounded-full">Start</Text>
                 </TouchableOpacity>
             </View>

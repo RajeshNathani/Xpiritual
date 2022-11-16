@@ -8,7 +8,7 @@ import Daas from './screens/Daas';
 import Relax from './screens/Relax';
 import Thought from './screens/Thought';
 import Daily from './screens/Daily';
-import Reason from './screens/Reason';
+import Meditation from './screens/Meditation';
 import 'react-native-gesture-handler'
 
 const Stack = createNativeStackNavigator();
@@ -25,6 +25,7 @@ const App = () => {
         <Stack.Screen name="Daas" component={Daas} />
         <Stack.Screen name="Thought" component={Thought} />
         <Stack.Screen name="Daily" component={Daily} />
+        <Stack.Screen name='Meditation' component={Meditation} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
