@@ -41,6 +41,12 @@ const Daas = () => {
     const [anxiety, setAnxiety] = useState(0);
     const [stress, setStress] = useState(0);
 
+    const calculate = () => {
+        setDepression(question1 + question2 + question3 + question4 + question5 + question6 + question7)
+        setAnxiety(question8 + question9 + question10 + question11 + question12 + question13 + question14)  
+        setStress(question15 + question16 + question17 + question18 + question19 + question20 + question21)
+    }
+
     return (
     <SafeAreaView className="bg-orange-50 h-full">
         <ScrollView>
@@ -83,18 +89,85 @@ const Daas = () => {
                 <Text className="font-bold py-1 text-lg text-black"> I felt I wasn't worth much as a person</Text>
                 <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question7} onTabPress={(index)=>{setQuestion7(index)}} />
             </View>
-            <View className="text-white flex-col w-full px-4 py-2 m-auto">
-            {daas.map((item, i) => {
-                return <>
-                 <Text className="font-bold py-1 text-lg text-black">{item.question}</Text>
-                 <SegmentedControlTab  activeTabStyle={{backgroundColor:'#ffa500'}} 
-                    className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]}
-                   onTabPress={(index)=>{setArray([...array, array[item.id] = index]),  console.log(array)}} selectedIndex={array[item.id]} />
-                </>
-            })}
+
+            {/* Anxiety */}
+
+             <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I was aware of dryness of my mouth.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question8} onTabPress={(index)=>{setQuestion8(index)}} />
             </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I experienced breathing difficulty.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question9} onTabPress={(index)=>{setQuestion9(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I experienced trembling (eg, in the hands).</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question10} onTabPress={(index)=>{setQuestion10(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black">I was worried about situations in which I might panic and make a fool of myself.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question11} onTabPress={(index)=>{setQuestion11(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I felt I was close to panic</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question12} onTabPress={(index)=>{setQuestion12(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I was aware of the action of my heart in the absence of physical exertion.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question13} onTabPress={(index)=>{setQuestion13(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I felt scared without any good reason.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question14} onTabPress={(index)=>{setQuestion14(index)}} />
+            </View>
+
+            {/* Stress */}
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black">I found it hard to wind down.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question15} onTabPress={(index)=>{setQuestion15(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I tended to over-react to situations.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question16} onTabPress={(index)=>{setQuestion16(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black">I felt that I was using a lot of nervous energy.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question17} onTabPress={(index)=>{setQuestion17(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I found myself getting agitated.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question18} onTabPress={(index)=>{setQuestion18(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I found it difficult to relax.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question19} onTabPress={(index)=>{setQuestion19(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black"> I was intolerant of anything that kept me from getting on with what I was doing.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question20} onTabPress={(index)=>{setQuestion20(index)}} />
+            </View>
+
+            <View className="text-white flex-col w-full px-4 py-2 m-auto">
+                <Text className="font-bold py-1 text-lg text-black">I felt that I was rather touchy.</Text>
+                <SegmentedControlTab activeTabStyle={{backgroundColor:'#ffa500'}} className="w-4/5 py-1" values={["Never(0)", "Sometimes(1)", "Often(2)", "Always(3)"]} selectedIndex={question21} onTabPress={(index)=>{setQuestion21(index)}} />
+            </View>
+
+            
+
             <View className="px-4">
-                <Button title="Submit" className="px-4 w-1/2 mx-auto" onPress={() =>{console.log(array)}} />
+                <Button title="Submit" className="px-4 w-1/2 mx-auto" onPress={() =>{calculate();}} />
             </View>
             <View className="px-4 py-2">
                 <Text className="font-bold text-xl">Depression: {depression}</Text>
