@@ -5,19 +5,7 @@ import Logo from '../assets/logo.png';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
-import  SQLite from 'react-native-sqlite-storage';
 
-
-
-const db = SQLite.openDatabase(
-  {
-    name:'sqlite.db',
-   location:'default',
-    createFromLocation:1
-  },
-  ()=>{},
-  error =>{console.log(error);}
-)
 
 
 const SignInScreen = () => {
@@ -72,7 +60,7 @@ const SignInScreen = () => {
         />
         <CustomButton 
           text="Login" 
-          onPress={authenticateUser} 
+          onPress={()=>console.warn('LogIn')} 
         />
 
         <Pressable  onPress={onForgotPassWordPressed}>

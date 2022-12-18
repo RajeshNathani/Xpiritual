@@ -3,7 +3,7 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 exports.createUser = async (req, res) => {
-  const {name, email, password} = req.body;
+  const {fullName, email, password} = req.body;
   const isNewUser = await User.isThisEmailInUse(email);
   if (!isNewUser) {
     return res.json({
@@ -12,12 +12,12 @@ exports.createUser = async (req, res) => {
     });
   }
   const user = await User({
-    name,
+    fullName,
     email,
     password,
   });
   await user.save();
-  res.json(user);
+  res.json({success:true , user:user});
 };
 
 exports.userSignIn = async (req, res) => {

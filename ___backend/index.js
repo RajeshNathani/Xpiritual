@@ -7,14 +7,18 @@ require('./models/db');
 
 require('dotenv').config();
 
+const cors = require('cors')
+
 const app = express();
+
+app.use(cors({origin:true}))
 
 app.use(express.json())
 app.use(userRouter)
 
 
 app.get('/', (req, res) => {
-  res.send('<h2>Hello world<h2>');
+  res.json({success:true});
 });
 
 app.listen(8000, () => {
